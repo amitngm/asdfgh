@@ -2,14 +2,18 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+        stage('Master') {
             steps {
-                echo 'Building..'
+				git checkout test
+				git merge master
+				git commit -test
             }
         }
         stage('Test') {
             steps {
-                echo 'Testing..'
+               git checkout master
+			   git merge test
+			   git commit -master
             }
         }
         stage('Deploy') {
