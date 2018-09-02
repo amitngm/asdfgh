@@ -1,0 +1,26 @@
+pipeline 
+{
+    agent any
+
+    stages 
+	{
+        stage('Test Branch') 
+		{
+            steps 
+			{
+               bat "git checkout master"
+			   bat "git merge test"
+			   bat "git push origin master"
+            }
+        }
+		stage('Nigam Branch') 
+		{
+            steps 
+			{
+               bat "git checkout master"
+			   bat "git merge nigam"
+			   bat "git push origin master"
+            }
+        }
+    }
+}
