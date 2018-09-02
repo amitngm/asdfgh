@@ -4,16 +4,16 @@ pipeline {
     stages {
         stage('Master') {
             steps {
-				git checkout test
-				git merge master
-				git commit -test
+				bat "git checkout test"
+				bat "git merge master"
+				bat "git commit -test"
             }
         }
         stage('Test') {
             steps {
-               git checkout master
-			   git merge test
-			   git commit -master
+               bat "git checkout master"
+			   bat "git merge test"
+			   bat "git commit -master"
             }
         }
         stage('Deploy') {
