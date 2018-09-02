@@ -1,19 +1,25 @@
-pipeline {
+pipeline 
+{
     agent any
 
-    stages {
-        stage('Test Branch') {
-            steps {
-               bat "git checkout master"
+    stages 
+	{
+        stage('Test Branch') 
+		{
+            steps 
+			{
+               bat "git checkout origin/master"
 			   bat "git merge origin/test"
-			   bat "git commit -master"
+			   bat "git commit -origin/master"
             }
         }
-		stage('Nigam Branch') {
-            steps {
-               bat "git checkout master"
+		stage('Nigam Branch') 
+		{
+            steps 
+			{
+               bat "git checkout origin/master"
 			   bat "git merge origin/nigam"
-			   bat "git commit -master"
+			   bat "git commit -origin/master"
             }
         }
     }
