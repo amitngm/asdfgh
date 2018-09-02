@@ -10,7 +10,7 @@ pipeline
 			{
                bat "git checkout origin/master"
 			   bat "git merge origin/test"
-			   bat "git commit -origin/master"
+			   bat "git commit -master"
             }
         }
 		stage('Nigam Branch') 
@@ -19,7 +19,7 @@ pipeline
 			{
                bat "git checkout origin/master"
 			   bat "git merge origin/nigam"
-			   bat "git commit -origin/master"
+			   bat "git commit -master"
             }
         }
     }
