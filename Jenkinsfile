@@ -9,6 +9,7 @@ pipeline
             steps 
 			{
                bat "git checkout master"
+			   bat "git pull origin master"
 			   bat "git merge test"
 			   bat "git push origin master"
             }
@@ -17,7 +18,7 @@ pipeline
 		{
             steps 
 			{
-               bat "git checkout master"
+               bat "git pull origin master"
 			   bat "git merge nigam"
 			   bat "git push origin master"
             }
