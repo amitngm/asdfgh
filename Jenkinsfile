@@ -19,7 +19,7 @@ pipeline
             steps 
 			{
                bat "git pull origin master"
-			   bat "git merge nigam"
+			   bat "git merge origin/nigam"
 			   bat "git push origin master"
             }
         }
