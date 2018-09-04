@@ -4,23 +4,35 @@ pipeline
 
     stages 
 	{
-        stage('Test Branch') 
+        stage('Developer') 
 		{
             steps 
 			{
-               bat "git checkout master"
 			   bat "git pull origin master"
-			   bat "git merge test"
-			   bat "git push origin master"
+			   bat "git checkout test"
+			   bat "git merge master"
+			   bat "git commit -u test"
+			   echo("Developer Code is updated")
             }
         }
 		stage('Nigam Branch') 
 		{
             steps 
 			{
-               bat "git pull origin master"
-			   bat "git merge origin/nigam"
-			   bat "git push origin master"
+               bat "git pull origin test"
+			   bat "git checkout nigam"
+			   bat "git merge test"
+			   bat "git commit -u nigam"
+            }
+        }
+		stage('Master Branch') 
+		{
+            steps 
+			{
+               bat "git pull origin nigam"
+			   bat "git checkout master"
+			   bat "git merge nigam"
+			   bat "git commit -u master"
             }
         }
     }
