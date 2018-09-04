@@ -11,7 +11,7 @@ pipeline
 			   bat "git pull origin master"
 			   bat "git checkout test"
 			   bat "git merge master"
-			   bat "git commit -test"
+			   bat "git commit -origin/test"
 			   echo("Developer Code is updated")
             }
         }
@@ -22,7 +22,7 @@ pipeline
                bat "git pull origin test"
 			   bat "git checkout nigam"
 			   bat "git merge test"
-			   bat "git commit -nigam"
+			   bat "git commit -origin/nigam"
             }
         }
 		stage('Master Branch') 
@@ -32,7 +32,7 @@ pipeline
                bat "git pull origin nigam"
 			   bat "git checkout master"
 			   bat "git merge nigam"
-			   bat "git commit -master"
+			   bat "git commit -origin/master"
             }
         }
     }
