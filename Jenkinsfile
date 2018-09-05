@@ -8,10 +8,11 @@ pipeline
 		{
             steps 
 			{
-			  bat "ant -version"
-			 
-			 echo("Developer Code is updated")
-            }
+			  withAnt(installation: 'Ant-1.10.5') {
+					bat "ant -version"
+					echo("Developer Code is updated")
+				}
+			}
         }
     }
 }
